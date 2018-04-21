@@ -13,3 +13,8 @@ build/calc.o:src/calc.c
 checkdir:
 	@if [ -d bin  ];then echo ; else mkdir bin;fi
 	@if [ -d build  ];then echo ; else mkdir build;fi
+
+clean:
+	rm build/*.o
+	rm bin/*.exe
+
