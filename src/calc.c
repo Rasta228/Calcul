@@ -3,6 +3,8 @@
 #include <math.h>
 #include "calc.h"
 
+#define Pi 3.1415
+
 float MainFunctions (int Op, float Num1, float Num2)
 {
     float Answer;
@@ -38,4 +40,68 @@ int Fact(int n)
         return 1;
     else
         return n*Fact(n-1);
+}
+
+
+float Trigonometry(int Op, float var)
+{
+    switch(Op)
+    {
+        case 6:
+        {
+            return sin(var * Pi/180);
+            break;
+        }
+        case 7:
+        {
+            return cos(var * Pi/180);
+            break;
+        }
+        case 8:
+        {
+            if (var == 90 || var == 270)
+            {
+                return 0;
+                break;
+            }
+            else
+            {
+                return tan(var * Pi/180);
+                break;
+            }
+        }
+        case 9:
+        {
+            if (var == 0 || var == 180 || var == 360)
+            {
+                return 0;
+                break;
+            }
+            else
+            {
+                return 1/tan(var * Pi/180);
+                break;
+            }
+        }
+        case 10:
+        {
+            return asin(var) * 180/Pi;
+            break;
+        }
+        case 11:
+        {
+            return acos(var) * 180/Pi;
+            break;
+        }
+        case 12:
+        {
+            return atan(var) * 180/Pi;
+            break;
+        }
+        case 13:
+        {
+            return (Pi/2 - atan(var)) * 180/Pi;
+        }
+        default: return 0;
+    }
 }
