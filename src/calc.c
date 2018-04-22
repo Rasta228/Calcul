@@ -43,6 +43,7 @@ int Fact(int n)
 }
 
 
+
 float Trigonometry(int Op, float var)
 {
     switch(Op)
@@ -105,3 +106,13 @@ float Trigonometry(int Op, float var)
         default: return 0;
     }
 }
+
+
+
+float Stepen (float Num1, int Number)
+{		float temp=Num1;
+		for (int i=2;i<=Number;i++) temp=temp*Num1;
+		return temp;
+}
+	
+

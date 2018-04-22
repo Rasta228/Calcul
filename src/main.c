@@ -4,7 +4,7 @@
 #include "calc.h"
 int main ()
 {
-    int Operation,temp,n,Answer;
+    int Operation,temp,n,Answer,Number;
     float answer,Num1,Num2;
     printf("---------------------------Calculator---------------------------\n ");
     printf("1.Addition    2.Subtraction    3.Multiplication    4.Division\n");
@@ -20,8 +20,11 @@ int main ()
         scanf("%d",&Operation);
         if(Operation==1 || Operation==2 || Operation==3 || Operation==4) temp=1;
         if(Operation==5) temp=2;
+
         if(Operation==6 || Operation==7 || Operation==8 || Operation==9 || Operation==10 || Operation==11 || Operation==12 || Operation==13) temp=3;
         
+        if(Operation==14) temp=4;
+
         switch (temp)
         {
             case (1):
@@ -64,6 +67,7 @@ int main ()
                 printf("Fac%d=%d",n,Answer);
                 break;
             }
+
             case (3):
             {
                 
@@ -142,7 +146,20 @@ int main ()
                 }
             }
         
+
+            case (4):
+            {
+                printf("Enter number");
+                scanf("%f",&Num1);
+                printf("Enter stepen'");
+                scanf("%d",&Number);
+                answer=Stepen (Num1,Number);
+                printf("%f^(%d)=%f",Num1,Number,answer);
+                break;
+            }
+        }
+
     }
     return  0;
 }
-}
+
