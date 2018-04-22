@@ -39,3 +39,10 @@ int Fact(int n)
     else
         return n*Fact(n-1);
 }
+
+float Stepen (float Num1, int Number)
+{		float temp=Num1;
+		for (int i=2;i<=Number;i++) temp=temp*Num1;
+		return temp;
+}
+	
