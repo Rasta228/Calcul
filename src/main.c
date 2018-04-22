@@ -8,8 +8,9 @@ int main ()
     float answer,Num1,Num2;
     printf("---------------------------Calculator---------------------------\n ");
     printf("1.Addition    2.Subtraction    3.Multiplication    4.Division\n");
-    printf("5.Factorial\n");
-    printf("6.Sin(x)    7.Cos(x)     8.Tg(x)     9.Ctg(x)    10.Arcsin(x)    11.Arccos(x)    12.Arctg(x) 13.Arcctg(x)\n");
+    printf("5.Factorial   6.Sin(x)         7.Cos(x)            8.Tg(x)\n");
+    printf("9.Ctg(x)      10.Arcsin(x)     11.Arccos(x)        12.Arctg(x) \n");
+    printf("13.Arcctg     14.Degree of the number\n");
     
     
     
@@ -144,6 +145,7 @@ int main ()
                     break;
                 }
                 }
+                break;
             }
         
 

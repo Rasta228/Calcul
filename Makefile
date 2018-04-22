@@ -2,7 +2,7 @@
 all:checkdir bin/calcul
 
 bin/calcul:build/calc.o build/main.o 
-	gcc build/calc.o  build/main.o -o bin/calcul
+	gcc build/calc.o  build/main.o -o bin/calcul -lm
 build/main.o:src/main.c
 	gcc -c src/main.c -o build/main.o -Wall -Werror
 
