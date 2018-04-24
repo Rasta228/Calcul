@@ -1,167 +1,187 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "calc.h"
 int main ()
 {
-    int Operation,temp,n,Answer,Number;
+    int Operation,n,Answer,Number;
     float answer,Num1,Num2;
-    printf("---------------------------Calculator---------------------------\n ");
-    printf("1.Addition    2.Subtraction    3.Multiplication    4.Division\n");
-    printf("5.Factorial   6.Sin(x)         7.Cos(x)            8.Tg(x)\n");
-    printf("9.Ctg(x)      10.Arcsin(x)     11.Arccos(x)        12.Arctg(x) \n");
-    printf("13.Arcctg     14.Degree of the number\n");
-    
-    
     
     
     while (1)
     {
+        printf("\n---------------------------Calculator---------------------------\n");
+        printf("******************************************************\n");
+        printf("*1.x^y           6.x+y    10.sin(x)    14.arcsin(x)*\n");
+        printf("*2.x!          7.x-y    11.Cos(x)    15.arccos(x)*\n");
+        printf("                8.x*y    12.tg(x)     16.arctg(x) *\n");
+        printf("*4.lg(x)           9.x/y    13.ctg(x)    17.arcctg(x)*\n");
+        printf("*5.ln(x)           0.Exit                                  *\n");
+        printf("******************************************************\n");
         printf("Enter operation number: ");
         scanf("%d",&Operation);
-        if(Operation==1 || Operation==2 || Operation==3 || Operation==4) temp=1;
-        if(Operation==5) temp=2;
-
-        if(Operation==6 || Operation==7 || Operation==8 || Operation==9 || Operation==10 || Operation==11 || Operation==12 || Operation==13) temp=3;
-        
-        if(Operation==14) temp=4;
-
-        switch (temp)
+        switch (Operation)
         {
-            case (1):
+            case 1:
             {
-                printf("Enter first number");
+                printf("Enter x:");
                 scanf("%f",&Num1);
-                printf("Enter second number");
-                scanf("%f",&Num2);
-                answer=MainFunctions (Operation,Num1,Num2);
-                switch (Operation)
-                {
-                    case 1:
-                    {
-                        printf("%f+%f=%f",Num1,Num2,answer);
-                        break;
-                    }
-                    case 2:
-                    {
-                        printf("%f-%f=%f",Num1,Num2,answer);
-                        break;
-                    }
-                    case 3:
-                    {
-                        printf("%f*%f=%f",Num1,Num2,answer);
-                        break;
-                    }
-                    case 4:
-                    {
-                        printf("%f/%f=%f",Num1,Num2,answer);
-                        break;
-                    }
-                }
-                break;
-            }
-            case (2):
-            {
-                printf("Enter number");
-                scanf("%d",&n);
-                Answer=Fact (n);
-                printf("Fac%d=%d",n,Answer);
-                break;
-            }
-
-            case (3):
-            {
-                
-                switch (Operation)
-                {
-                    case 6:
-                {
-                    float angle;
-                    printf("Enter the angle value: ");
-                    scanf("%f",&angle);
-                    printf("Sin(%f) = %.3f\n", angle, Trigonometry(Operation, angle));
-                    break;
-                }
-                case 7:
-                {
-                    float angle;
-                    printf("Enter the angle value: ");
-                    scanf("%f",&angle);
-                    printf("Cos(%f) = %.3f\n", angle, Trigonometry(Operation, angle));
-                    break;
-                }
-                case 8:
-                {
-                    float angle;
-                    printf("Enter the angle value: ");
-                    scanf("%f",&angle);
-                    if (Trigonometry(Operation, angle) == 0)
-                        printf("Does not exist");
-                    else
-                        printf("Tg(%f) = %.3f\n", angle, Trigonometry(Operation, angle));
-                    break;
-                }
-               case 9:
-                {
-                    float angle;
-                    printf("Enter the angle value: ");
-                    scanf("%f",&angle);
-                    if (Trigonometry(Operation, angle) == 0)
-                        printf("Does not exist");
-                    else
-                        printf("Ctg(%f) = %.3f\n", angle, Trigonometry(Operation, angle));
-                    break;
-                }
-                case 10:
-                {
-                    float sinus;
-                    printf("Enter the value of the sin(x): ");
-                    scanf("%f", &sinus);
-                    printf("Arcsin(%f)= %.2f\n", sinus, Trigonometry(Operation, sinus));
-                    break;
-                }
-                case 11:
-                {
-                    float cosine;
-                    printf("Enter the value of the cos(x): ");
-                    scanf("%f", &cosine);
-                    printf("Arccos(%f) = %.8f\n", cosine, Trigonometry(Operation, cosine));
-                    break;
-                }
-                case 12:
-                {
-                    float tangent;
-                    printf("Enter the value of the tg(x): ");
-                    scanf("%f", &tangent);
-                    printf("Arctg(%f) = %.2f\n", tangent, Trigonometry(Operation, tangent));
-                    break;
-                }
-                case 13:
-                {
-                    float cotangent;
-                    printf("Enter the value of the ctg(x): ");
-                    scanf("%f", &cotangent);
-                    printf("Arcctg(%f) = %.2f\n", cotangent, Trigonometry(Operation, cotangent));
-                    break;
-                }
-                }
-                break;
-            }
-        
-
-            case (4):
-            {
-                printf("Enter number");
-                scanf("%f",&Num1);
-                printf("Enter stepen'");
+                printf("Enter y:");
                 scanf("%d",&Number);
                 answer=Stepen (Num1,Number);
-                printf("%f^(%d)=%f",Num1,Number,answer);
+                printf("%.3f^(%d)=%.3f",Num1,Number,answer);
+                break;
+            }
+            case 2:
+            {
+                printf("Enter x:");
+                scanf("%d",&n);
+                Answer=Fact (n);
+                printf("Fac(%d)=%d",n,Answer);
+                break;
+            }
+            case 4:
+            {
+                printf("Enter x:");
+                scanf("%f",&Num1);
+                answer=lg10(Num1);
+                printf("lg(%0.f)=(%f)",Num1,answer);
+                break;
+            }
+            case 5:
+            {
+                printf("Enter x:");
+                scanf("%f",&Num1);
+                answer=lgE(Num1);
+                printf("ln(%0.f)=(%f)",Num1,answer);
+                break;
+            }
+            case 6:
+            {
+                
+                printf("Enter x:");
+                scanf("%f",&Num1);
+                printf("Enter y:");
+                scanf("%f",&Num2);
+                answer=MainFunctions (Operation, Num1,Num2);
+                printf("%.3f+%.3f=%.3f",Num1,Num2,answer);
+                break;
+            }
+            case 7:
+            {     printf("Enter x:");
+                scanf("%f",&Num1);
+                printf("Enter y:");
+                scanf("%f",&Num2);
+                answer=MainFunctions (Operation, Num1,Num2);
+                printf("%.3f-%.3f=%.3f",Num1,Num2,answer);
+                break;
+            }
+            case 8:
+            {     printf("Enter x:");
+                scanf("%f",&Num1);
+                printf("Enter y:");
+                scanf("%f",&Num2);
+                answer=MainFunctions (Operation, Num1,Num2);
+                printf("%.3f*%.3f=%.3f",Num1,Num2,answer);
+                break;
+            }
+            case 9:
+            {
+                printf("Enter x:");
+                scanf("%f",&Num1);
+                do
+                {
+                    printf("Enter y:");
+                    scanf("%f",&Num2);
+                    if(Num2==0) printf("Error\n");
+                }while(Num2==0);
+                answer=MainFunctions (Operation, Num1,Num2);
+                printf("%.3f/%.3f=%.3f",Num1,Num2,answer);
+                break;
+            }
+            case 10:
+            {
+                float angle;
+                printf("Enter x: ");
+                scanf("%f",&angle);
+                printf("Sin(%.3f) = %.3f\n", angle, Trigonometry(Operation, angle));
+                break;
+            }
+            case 11:
+            {
+                float angle;
+                printf("Enter x: ");
+                scanf("%f",&angle);
+                printf("Cos(%.3f) = %.3f\n", angle, Trigonometry(Operation, angle));
+                break;
+            }
+            case 12:
+            {
+                float angle;
+                printf("Enter x: ");
+                scanf("%f",&angle);
+                if (Trigonometry(Operation, angle) == 0)
+                    printf("Does not exist");
+                else
+                    printf("Tg(%.3f) = %.3f\n", angle, Trigonometry(Operation, angle));
+                break;
+            }
+            case 13:
+            {
+                float angle;
+                printf("Enter x: ");
+                scanf("%f",&angle);
+                if (Trigonometry(Operation, angle) == 0)
+                    printf("Does not exist");
+                else
+                    printf("Ctg(%.3f) = %.3f\n", angle, Trigonometry(Operation, angle));
+                break;
+            }
+            case 14:
+            {
+                float sinus;
+                do{
+                    printf("Enter x: ");
+                    scanf("%f", &sinus);
+                    if(sinus < -1 || sinus > 1)
+                        printf("Error\n");
+                }while(sinus < -1 || sinus > 1);
+                printf("Arcsin(%.3f)= %.2f\n", sinus, Trigonometry(Operation, sinus));
+                break;
+            }
+            case 15:
+            {
+                float cosine;
+                do{
+                    printf("Enter x: ");
+                    scanf("%f", &cosine);
+                    if(cosine < -1 || cosine > 1)
+                        printf("Error\n");
+                }while(cosine < -1 || cosine > 1);
+                printf("Arccos(%.3f) = %.3f\n", cosine, Trigonometry(Operation, cosine));
+                break;
+            }
+            case 16:
+            {
+                float tangent;
+                printf("Enter x: ");
+                scanf("%f", &tangent);
+                printf("Arctg(%.3f) = %.3f\n", tangent, Trigonometry(Operation, tangent));
+                break;
+            }
+            case 17:
+            {
+                float cotangent;
+                printf("Enter x: ");
+                scanf("%f", &cotangent);
+                printf("Arcctg(%.3f) = %.3f\n", cotangent, Trigonometry(Operation, cotangent));
                 break;
             }
         }
-
+        
+        if (Operation==0) break;
+        printf("\n");
     }
     return  0;
 }
-
