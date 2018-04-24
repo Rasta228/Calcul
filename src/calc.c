@@ -134,3 +134,15 @@ float lgE(float N)
     N=log(N);
     return N;
 }
+
+
+float Procent(float Num1, float Num2)
+{
+	Num1=Num1/100.0;
+	Num2=Num2*Num1;
+	return Num2;
+}
+
+
+
+

@@ -8,4 +8,5 @@ float Trigonometry(int Op, float var);
 float Stepen (float Num1, int Number);
 float lgE(float N);
 float lg10(float N);
+float Procent(float Num1, float Num2);
 #endif

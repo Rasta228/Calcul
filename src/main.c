@@ -10,15 +10,17 @@ int main ()
     
     
     while (1)
-    {
-        printf("\n---------------------------Calculator---------------------------\n");
-        printf("******************************************************\n");
-        printf("*1.x^y           6.x+y    10.sin(x)    14.arcsin(x)*\n");
-        printf("*2.x!          7.x-y    11.Cos(x)    15.arccos(x)*\n");
-        printf("                8.x*y    12.tg(x)     16.arctg(x) *\n");
-        printf("*4.lg(x)           9.x/y    13.ctg(x)    17.arcctg(x)*\n");
-        printf("*5.ln(x)           0.Exit                                  *\n");
-        printf("******************************************************\n");
+    {	printf("                   ************                    \n");              
+        printf("                   *Calculator*                          Valid\n");
+	printf("                   ************                        Character   \n");
+        printf("**************************************************** _____________\n");
+        printf("*1.x^y           6.x+y    10.sin(x)    14.arcsin(x)* |'7','8','9'|\n");
+        printf("*2.x!            7.x-y    11.Cos(x)    15.arccos(x)* |'4','5','6'|\n");
+        printf("*3.x%%y           8.x*y    12.tg(x)     16.arctg(x) * |'1','2','3'|\n");
+        printf("*4.lg(x)         9.x/y    13.ctg(x)    17.arcctg(x)* |    '0'    |\n");
+        printf("*5.ln(x)                                           * |    '.'    |\n");
+        printf("*                    0.Exit                        * |___________|\n");
+	printf("****************************************************\n");
         printf("Enter operation number: ");
         scanf("%d",&Operation);
         switch (Operation)
@@ -41,6 +43,17 @@ int main ()
                 printf("Fac(%d)=%d",n,Answer);
                 break;
             }
+	    case 3:
+            {
+				printf("Enter x:");
+				scanf("%f",&Num1);
+				printf("Enter y:");
+				scanf("%f",&Num2);
+				answer=Procent(Num1,Num2);
+				Num1=Num1/100.0;
+				printf("(%.3f)*%.3f=%.3f",Num1,Num2,answer);
+				break;
+	    }
             case 4:
             {
                 printf("Enter x:");
