@@ -5,9 +5,9 @@
 
 #define Pi 3.1415
 
-float MainFunctions (int Op, float Num1, float Num2)
+long double  MainFunctions (long long  Op, long double  Num1, long double  Num2)
 {
-    float Answer;
+    long double  Answer;
     switch (Op)
     {
         case 6:
@@ -34,7 +34,7 @@ float MainFunctions (int Op, float Num1, float Num2)
     return Answer;
 }
 
-int Fact(int n)
+long long Fact(long long  n)
 {
     if (n == 1)
         return 1;
@@ -44,7 +44,7 @@ int Fact(int n)
 
 
 
-float Trigonometry(int Op, float var)
+ long double Trigonometry( long long Op,  long double var)
 {
     switch(Op)
     {
@@ -109,8 +109,9 @@ float Trigonometry(int Op, float var)
 
 
 
-float Stepen (float Num1, int Number)
-{        float temp=Num1;
+long double Stepen (long double Num1,long long Number)
+{   
+	long double temp=Num1;
     if (Number==0) temp=1;
     else if (Number==1) temp=temp;
     else if (Number==-1) temp=1/temp;
@@ -123,13 +124,13 @@ float Stepen (float Num1, int Number)
     }
     return temp;
 }
-float lg10(float N)
+long double lg10(long double N)
 {
     N=log10(N);
     return N;
 }
 
-float lgE(float N)
+long double lgE(long double N)
 {
     N=log(N);
     return N;

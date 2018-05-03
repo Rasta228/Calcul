@@ -1,12 +1,13 @@
 #ifndef _calcul_calc_h
 #define _calcul_calc_h
-float MainFunctions (int Op, float Num1, float Num2);
-int Fact(int n);
+long double  MainFunctions (long long Op, long double  Num1, long double  Num2);
+long long Fact(long long  n);
 
-float Trigonometry(int Op, float var);
+ long double Trigonometry( long long Op,  long double var);
 
-float Stepen (float Num1, int Number);
-float lgE(float N);
-float lg10(float N);
+long double Stepen (long double Num1,long long Number);
+long double lgE(long double N);
+long double lg10(long double N);
 float Procent(float Num1, float Num2);
+void StrNum(long long *Numt,long double *Numf, int c);
 #endif
