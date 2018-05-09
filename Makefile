@@ -20,8 +20,8 @@ build/StrNum.o:src/StrNum.c
 	gcc -c src/StrNum.c -o build/StrNum.o -Wall -Werror
 
 
-build/main_test.o: test/main.c
-	gcc -I thirdparty -I src -c test/main.c -o build/main_test.o
+build/main_test.o: tests/main.c
+	gcc -I thirdparty -I src -c tests/main.c -o build/main_test.o
 
 checkdir:
 	@if [ -d bin  ];then echo ; else mkdir bin;fi
