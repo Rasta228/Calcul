@@ -3,7 +3,7 @@
 #include <math.h>
 #include "calc.h"
 
-#define Pi 3.1415
+#define Pi 3.14
 
 long double  MainFunctions (long long  Op, long double  Num1, long double  Num2)
 {
@@ -46,65 +46,76 @@ long long Fact(long long  n)
 
  long double Trigonometry( long long Op,  long double var)
 {
+	long double  Answer;
     switch(Op)
     {
         case 10:
         {
-            return sin(var * Pi/180);
+			Answer=sin(var);
+            return Answer;
             break;
         }
         case 11:
-        {
-            return cos(var * Pi/180);
+        {	
+			
+            Answer=cos(var);
+            return Answer;
             break;
         }
         case 12:
         {
-            if (var == 90 || var == 270)
+            if (var == Pi || var == Pi*3/2)
             {
                 return 0;
                 break;
             }
             else
             {
-                return tan(var * Pi/180);
+                Answer=tan(var);
+				return Answer;
                 break;
             }
         }
         case 13:
         {
-            if (var == 0 || var == 180 || var == 360)
+            if (var == 0 || var == Pi || var == Pi*2)
             {
                 return 0;
                 break;
             }
             else
             {
-                return 1/tan(var * Pi/180);
+				Answer=1/tan(var);
+				return Answer;
                 break;
             }
         }
         case 14:
         {
-            return asin(var) * 180/Pi;
+		
+			Answer=asin(var);
+			return Answer;
             break;
         }
         case 15:
         {
-            return acos(var) * 180/Pi;
+			Answer=acos(var);
+			return Answer;
             break;
         }
         case 16:
         {
-            return atan(var) * 180/Pi;
+			Answer=atan(var);
+			return Answer;
             break;
         }
         case 17:
         {
-            return (Pi/2 - atan(var)) * 180/Pi;
+			Answer=(Pi/2 - atan(var));
+			return Answer;
         }
-        default: return 0;
     }
+    return 0;
 }
 
 
@@ -137,7 +148,7 @@ long double lgE(long double N)
 }
 
 
-float Procent(float Num1, float Num2)
+long double Procent(float Num1, float Num2)
 {
 	Num1=Num1/100.0;
 	Num2=Num2*Num1;
