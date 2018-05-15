@@ -2,27 +2,30 @@
 #include <stdlib.h>
 #include <string.h>
 #include "calc.h"
-void StrNum(long long *Numt,long double *Numf, int c)
+int StrNum(long long *Numt,long double *Numf, int c)
 {
 	char st[9999],str[9999];
 	int Minus,MinusK,ZapK,j,temp,i,len;
 	double Zap;
-	do
-	{
+	
 		for (i=0;i<99;i++) st[i]=0;
 		st[i]=st[i];
-		scanf("%s",str);
+		fgets(str, sizeof str, stdin);
 		len=strlen(str);
-		Minus=1;MinusK=0;Zap=1;ZapK=0;temp=1;j=0;
-		for (i=0;i<len;i++)
+		//printf("k%dk",len);
+		Minus=1;MinusK=0;Zap=1;ZapK=0;j=0;
+		temp=1;
+		temp=temp;
+		
+		for (i=0;i<len-1;i++)
 		{
+		
 			if (str[i]=='0' || str[i]=='1' || str[i]=='2' || str[i]=='3' || str[i]=='4' || str[i]=='5' || str[i]=='6' || str[i]=='7' || str[i]=='8' || str[i]=='9' || str[i]=='.' || str[i]=='-' )
 			{
-					
 				if (str[i]=='0' || str[i]=='1' || str[i]=='2' || str[i]=='3' || str[i]=='4' || str[i]=='5' || str[i]=='6' || str[i]=='7' || str[i]=='8' || str[i]=='9')	
 				{
+					
 					st[j]=str[i];
-					//printf("%c",st[j]);
 					j++;
 					if (ZapK==1) Zap=Zap*10.0;
 				}
@@ -39,12 +42,13 @@ void StrNum(long long *Numt,long double *Numf, int c)
 				}
 			}
 			else temp=0;
+			//printf("|%d|",temp);
 		}
 	if (c==1 && len>15) temp=0;
 	if (c==2 && len>19) temp=0;
 	if (c==1 && Zap>1) temp=0;
-	if (temp==0) printf("Enter correct Number:");
-	}while (temp==0);
+
+	if (temp==0) return 0;
 	if (c==1)
 	{	
 		switch (str[0])
@@ -84,6 +88,7 @@ void StrNum(long long *Numt,long double *Numf, int c)
 	
 	if (c==2)
 	{	
+
 		switch (str[0])
 		{
 			case '0': {*Numf=0.0;break;}
@@ -116,4 +121,5 @@ void StrNum(long long *Numt,long double *Numf, int c)
 		*Numf=*Numf/Zap;
 		if (Minus==-1) *Numf=*Numf*(-1.0);
 	}
+	return 1;
 }

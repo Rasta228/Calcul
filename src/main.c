@@ -10,7 +10,7 @@ int main ()
 	long double Numf;
     long long Operation,n,Answer,Number;
     long double answer,Num1,Num2;
-    int c;
+    int c,f;
     Num2=Answer=1;
     Num2=Num2;
     Answer=Answer;
@@ -27,23 +27,27 @@ int main ()
         printf("*                    0.Exit                        * |___________|\n");
 		printf("****************************************************\n");
 		c=1;
-        printf("Enter operation number: ");
         do {
-        StrNum(&Numt,&Numf,c);
+		printf("Enter operation number: ");
+        f=StrNum(&Numt,&Numf,c);
         Operation=Numt;
-        if (Operation<0 || Operation>18) printf("Enter correct Number:");
-		}while(Operation<0 || Operation>18);
+   
+		}while(Operation<0 || Operation>18 || f==0);
         switch (Operation)
         {
             case 1:
             {	
 				c=2;
+				do {
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
                 Num1=Numf;
                 c=1;
+                do {
                 printf("Enter y:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
                 Number=Numt;
                 answer=Stepen (Num1,Number);
                 printf("%.3Lf^(%lld)=%.3Lf",Num1,Number,answer);
@@ -51,8 +55,10 @@ int main ()
             }
             case 2:
             {
+				do {
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
                 n=Numt;
                 Answer=Fact(n);
                 printf("Fac(%lld)=%lld",n,Answer);
@@ -61,11 +67,15 @@ int main ()
 	    case 3:
             {
 				c=2;
+				do {
 				printf("Enter x:");
-				StrNum(&Numt,&Numf,c);
+				f=StrNum(&Numt,&Numf,c);
+				}while(f==0);
 				Num1=Numf;
+				do {
 				printf("Enter y:");
-				StrNum(&Numt,&Numf,c);
+				f=StrNum(&Numt,&Numf,c);
+				}while(f==0);
 				Num2=Numf;
 				answer=Procent(Num1,Num2);
 				Num1=Num1/100.0;
@@ -75,8 +85,10 @@ int main ()
            case 4:
             {
 				c=2;
+				do {
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
                 answer=lg10(Num1);
                 printf("lg(%Lf)=(%Lf)",Num1,answer);
@@ -84,9 +96,11 @@ int main ()
             }
             case 5:
             {
+				do {
 				c=2;
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
                 answer=lgE(Num1);
                 printf("ln(%0.Lf)=(%Lf)",Num1,answer);
@@ -94,12 +108,17 @@ int main ()
             }
             case 6:
             {
+				
                 c=2;
+                do {
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
+				do {
                 printf("Enter y:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num2=Numf;
                 answer=MainFunctions (Operation, Num1,Num2);
                 printf("%.3Lf+%.3Lf=%.3Lf",Num1,Num2,answer);
@@ -109,11 +128,15 @@ int main ()
     
             {   
 				c=2;
+				do {
 				printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
+				do {
                 printf("Enter y:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num2=Numf;
                 answer=MainFunctions (Operation, Num1,Num2);
                 printf("%.3Lf-%.3Lf=%.3Lf",Num1,Num2,answer);
@@ -122,11 +145,15 @@ int main ()
             case 8:
             {   
 				c=2;
+				do {
 				printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
+				do {
                 printf("Enter y:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num2=Numf;
                 answer=MainFunctions (Operation, Num1,Num2);
                 printf("%.3Lf*%.3Lf=%.3Lf",Num1,Num2,answer);
@@ -135,13 +162,17 @@ int main ()
             case 9:
             {
 				c=2;
+				do {
                 printf("Enter x:");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				Num1=Numf;
                 do
                 {
+					do {
                     printf("Enter y:");
-                    StrNum(&Numt,&Numf,c);
+                    f=StrNum(&Numt,&Numf,c);
+                    }while(f==0);
 					Num2=Numf;
                     if(Num2==0) printf("Error\n");
                 }while(Num2==0);
@@ -155,8 +186,10 @@ int main ()
             {
 				c=2;
                 long double angle;
+                do {
                 printf("Enter x: ");
-				StrNum(&Numt,&Numf,c);
+				f=StrNum(&Numt,&Numf,c);
+				}while(f==0);
 				angle=Numf;
                 printf("Sin(%.3Lf) = %.3Lf\n", angle, Trigonometry(Operation, angle));
                 break;
@@ -165,8 +198,11 @@ int main ()
             {
 				c=2;
                 long double angle;
+                do {
                 printf("Enter x: ");
-                StrNum(&Numt,&Numf,c);
+                
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				angle=Numf;
                 printf("Cos(%.3Lf) = %.3Lf\n", angle, Trigonometry(Operation, angle));
                 break;
@@ -175,8 +211,10 @@ int main ()
             {
 				c=2;
                 long double angle;
+                do {
                 printf("Enter x: ");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				angle=Numf;
                 if (Trigonometry(Operation, angle) == 0)
                     printf("Does not exist");
@@ -188,8 +226,10 @@ int main ()
             {
 				c=2;
                 long double angle;
+                do {
                 printf("Enter x: ");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				angle=Numf;
                 if (Trigonometry(Operation, angle) == 0)
                     printf("Does not exist");
@@ -202,8 +242,10 @@ int main ()
 				c=2;
                 long double sinus;
                 do{
+					do {
                     printf("Enter x: ");
-                    StrNum(&Numt,&Numf,c);
+                    f=StrNum(&Numt,&Numf,c);
+                    }while(f==0);
 					sinus=Numf;
                     if(sinus < -1 || sinus > 1)
                         printf("Error\n");
@@ -216,8 +258,10 @@ int main ()
 				c=2;
                 long double cosine;
                 do{
+					do {
                     printf("Enter x: ");
-					StrNum(&Numt,&Numf,c);
+					f=StrNum(&Numt,&Numf,c);
+					}while(f==0);
 					cosine=Numf;
                     if(cosine < -1 || cosine > 1)
                         printf("Error\n");
@@ -229,8 +273,10 @@ int main ()
             {
 				c=2;
                 long double tangent;
+                do {
                 printf("Enter x: ");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				tangent=Numf;
                 printf("Arctg(%.3Lf) = %.3Lf\n", tangent, Trigonometry(Operation, tangent));
                 break;
@@ -239,8 +285,10 @@ int main ()
             {
 				c=2;
                 long double cotangent;
+                do {
                 printf("Enter x: ");
-                StrNum(&Numt,&Numf,c);
+                f=StrNum(&Numt,&Numf,c);
+                }while(f==0);
 				cotangent=Numf;
                 printf("Arcctg(%.3Lf) = %.3Lf\n", cotangent, Trigonometry(Operation, cotangent));
                 break;

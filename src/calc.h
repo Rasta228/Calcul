@@ -12,5 +12,5 @@ long double Stepen (long double Num1,long long Number);
 long double lgE(long double N);
 long double lg10(long double N);
 long double Procent(float Num1, float Num2);
-void StrNum(long long *Numt,long double *Numf, int c);
+int StrNum(long long *Numt,long double *Numf, int c);
 #endif
