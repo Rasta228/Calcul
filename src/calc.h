@@ -6,7 +6,7 @@
 long double  MainFunctions (long long Op, long double  Num1, long double  Num2);
 long long Fact(long long  n);
 
- long double Trigonometry( long long Op,  long double var);
+long double Trigonometry( long long Op,  long double Num1);
 
 long double Stepen (long double Num1,long long Number);
 long double lgE(long double N);

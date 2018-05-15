@@ -34,94 +34,100 @@ long double  MainFunctions (long long  Op, long double  Num1, long double  Num2)
     return Answer;
 }
 
+
 long long Fact(long long  n)
-{
-    if (n == 1)
-        return 1;
+ {
+  long double Answer = 1;
+    if ( n < 0)
+      return 0;
+    if ( n == 0)
+      return 1;
     else
-        return n*Fact(n-1);
-}
-
-
-
- long double Trigonometry( long long Op,  long double var)
-{
-	long double  Answer;
-    switch(Op)
     {
-        case 10:
-        {
-			Answer=sin(var);
-            return Answer;
-            break;
-        }
-        case 11:
-        {	
-			
-            Answer=cos(var);
-            return Answer;
-            break;
-        }
-        case 12:
-        {
-            if (var == Pi || var == Pi*3/2)
+      for (int i = 1; i <= n; i++)
+    Answer = Answer * i;
+      return Answer;
+	   }
+	}
+
+long double Trigonometry( long long Op,  long double Num1)
+{
+ long double  Answer;
+   switch(Op)
+   {
+       case 10:
+       {
+     Answer=sin(Num1);
+           return Answer;
+           break;
+       }
+       case 11:
+       {
+
+           Answer=cos(Num1);
+           return Answer;
+           break;
+       }
+       case 12:
+       {
+           if (Num1 == Pi || Num1 == Pi*3/2)
+           {
+               return 0;
+               break;
+           }
+           else
+           {
+               Answer=tan(Num1);
+       return Answer;
+               break;
+           }
+       }
+       case 13:
+       {
+           if (Num1 == 0 || Num1 == Pi || Num1 == Pi*2)
+           {
+               return 0;
+               break;
+           }
+           else
             {
-                return 0;
-                break;
-            }
-            else
-            {
-                Answer=tan(var);
-				return Answer;
-                break;
-            }
-        }
-        case 13:
-        {
-            if (var == 0 || var == Pi || var == Pi*2)
-            {
-                return 0;
-                break;
-            }
-            else
-            {
-				Answer=1/tan(var);
-				return Answer;
-                break;
-            }
-        }
-        case 14:
-        {
-		
-			Answer=asin(var);
-			return Answer;
-            break;
-        }
-        case 15:
-        {
-			Answer=acos(var);
-			return Answer;
-            break;
-        }
-        case 16:
-        {
-			Answer=atan(var);
-			return Answer;
-            break;
-        }
-        case 17:
-        {
-			Answer=(Pi/2 - atan(var));
-			return Answer;
-        }
-    }
-    return 0;
+       Answer=1/tan(Num1);
+       return Answer;
+               break;
+           }
+       }
+       case 14:
+       {
+
+     Answer=asin(Num1);
+     return Answer;
+           break;
+       }
+       case 15:
+       {
+     Answer=acos(Num1);
+     return Answer;
+           break;
+       }
+       case 16:
+       {
+     Answer=atan(Num1);
+     return Answer;
+           break;
+       }
+       case 17:
+       {
+     Answer=(Pi/2 - atan(Num1));
+     return Answer;
+       }
+   }
+   return 0;
 }
 
 
 
 long double Stepen (long double Num1,long long Number)
-{   
+{
 	long double temp=Num1;
     if (Number==0) temp=1;
     else if (Number==1) temp=temp;
@@ -154,7 +160,3 @@ long double Procent(float Num1, float Num2)
 	Num2=Num2*Num1;
 	return Num2;
 }
-
-
-
-

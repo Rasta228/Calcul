@@ -15,7 +15,7 @@ int main ()
     Num2=Num2;
     Answer=Answer;
     while (1)
-    {	printf("                   ************                    \n");              
+    {	printf("                   ************                    \n");
         printf("                   *Calculator*                          Valid\n");
 		printf("                   ************                        Character   \n");
         printf("**************************************************** _____________\n");
@@ -31,12 +31,12 @@ int main ()
 		printf("Enter operation number: ");
         f=StrNum(&Numt,&Numf,c);
         Operation=Numt;
-   
+
 		}while(Operation<0 || Operation>18 || f==0);
         switch (Operation)
         {
             case 1:
-            {	
+            {
 				c=2;
 				do {
                 printf("Enter x:");
@@ -53,17 +53,17 @@ int main ()
                 printf("%.3Lf^(%lld)=%.3Lf",Num1,Number,answer);
                 break;
             }
-            case 2:
-            {
-				do {
-                printf("Enter x:");
-                f=StrNum(&Numt,&Numf,c);
-                }while(f==0);
-                n=Numt;
-                Answer=Fact(n);
+      case 2:
+						{
+							do {
+								printf("Enter x:");
+	              StrNum(&Numt,&Numf,c);
+	              n=Numt;
+	              Answer=Fact(n);
+							  } while(Answer == 0);
                 printf("Fac(%lld)=%lld",n,Answer);
                 break;
-            }
+							}
 	    case 3:
             {
 				c=2;
@@ -108,7 +108,7 @@ int main ()
             }
             case 6:
             {
-				
+
                 c=2;
                 do {
                 printf("Enter x:");
@@ -125,8 +125,8 @@ int main ()
                 break;
             }
             case 7:
-    
-            {   
+
+            {
 				c=2;
 				do {
 				printf("Enter x:");
@@ -143,7 +143,7 @@ int main ()
                 break;
             }
             case 8:
-            {   
+            {
 				c=2;
 				do {
 				printf("Enter x:");
@@ -180,8 +180,8 @@ int main ()
                 printf("%.3Lf/%.3Lf=%.3Lf",Num1,Num2,answer);
                 break;
             }
-            
-            
+
+
            case 10:
             {
 				c=2;
@@ -200,7 +200,7 @@ int main ()
                 long double angle;
                 do {
                 printf("Enter x: ");
-                
+
                 f=StrNum(&Numt,&Numf,c);
                 }while(f==0);
 				angle=Numf;
@@ -294,7 +294,7 @@ int main ()
                 break;
             }
         }
-        
+
         if (Operation==0) break;
         printf("\n");
     }
