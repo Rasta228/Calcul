@@ -54,16 +54,16 @@ int main ()
                 break;
             }
       case 2:
-						{
-							do {
-								printf("Enter x:");
+			{
+				  do {
+				  printf("Enter x:");
 	              StrNum(&Numt,&Numf,c);
 	              n=Numt;
 	              Answer=Fact(n);
-							  } while(Answer == 0);
+				  } while(Answer == 0);
                 printf("Fac(%lld)=%lld",n,Answer);
                 break;
-							}
+		}
 	    case 3:
             {
 				c=2;

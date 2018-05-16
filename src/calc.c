@@ -38,10 +38,8 @@ long double  MainFunctions (long long  Op, long double  Num1, long double  Num2)
 long long Fact(long long  n)
  {
   long double Answer = 1;
-    if ( n < 0)
-      return 0;
-    if ( n == 0)
-      return 1;
+    if ( n < 0) {Answer=0; return Answer;}
+    else if ( n == 0) {Answer=1; return Answer;}
     else
     {
       for (int i = 1; i <= n; i++)
